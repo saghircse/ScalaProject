@@ -1,0 +1,14 @@
+// --- Show dataframe
+  df.show()
+
+  // ----- Double / Muktiply X
+  def multiplyX(n:Double,x:Int) : Double = { // move that function in any other class you want
+	val y= n*x
+	y
+  }
+		
+  sqlContext.udf.register("multiplyX",multiplyX(_,_))		
+  val df3 =  sqlContext.sql("select ti1,ti2,ti3,ti4,multiplyX(ti3,2) as double_ti3 from temp")
+  df3.show()
+  System.exit(1)
+ // ===========================
