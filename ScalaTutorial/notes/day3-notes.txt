@@ -1,0 +1,26 @@
+1. String Interpolation 
+String Interpolation allows users to embed variable or expressions reference directly in processed string literal.
+Three Types
+	s  Interpolation
+	f Interpolation
+	raw Interpolation
+	
+2. Types of Comments
+	Sigle Line
+	Multi Line
+	Documentation comment
+	
+3. if-else
+
+4. Few operators ( Assignment, Relational, Arithmetic, etc )
+
+
+Practical / Assignment:
+1. Demo of String Interpolation
+2. Demo of if-else
+
+Problems
+1. Even Odd
+2. Positive/Negative Numbers
+3. Largest of two numbers
+4. Smallest of three numbers
