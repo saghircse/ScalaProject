@@ -1,6 +1,6 @@
 package com.sh.test
 
-import com.sh.util.MathUtil._
+import com.sh.util.MathUtil
 
 object HelloMath {
   def main(args: Array[String]): Unit = {
@@ -8,8 +8,8 @@ object HelloMath {
     val a = 10;
     val b = 5;
     
-    val s = sum(a,b)
-    val m = multiply(a,b)
+    val s = MathUtil.sum(a,b)
+    val m = MathUtil.multiply(a,b)
     
     println("Sum = "+s)
     println("Multiply = "+m)
