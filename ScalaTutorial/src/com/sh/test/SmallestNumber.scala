@@ -1,10 +1,15 @@
 package com.sh.test
 
+import io.StdIn._
+
 object SmallestNumber {
    def main(args: Array[String]): Unit = {
-     val a=20
-     val b=10
-     val c=5
+     
+     
+     println("Enter 3 numbers")
+     val a=readInt()
+     val b=readInt()
+     val c=readInt()
      
      // Nested if-else
      if(a<b){
