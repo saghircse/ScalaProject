@@ -24,7 +24,7 @@ object ForLoopDemo {
     }
     
     // for loop - On Collection 
-    val lst = List("cat","dog",5,11,10)
+    val lst = List("cat","dog",5.5,11,10)
     for(x <- lst){
       println(x)
     }
