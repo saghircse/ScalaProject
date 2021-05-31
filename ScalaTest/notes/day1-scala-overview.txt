@@ -1,0 +1,27 @@
+1. What is Scala?
+2. Features of Scala
+3. First Example
+
+object TestScala {
+  def main(args: Array[String]): Unit = {
+    println("Hello Scala")
+  }
+}
+
+4. Language Level
+5. JDK vs JRE vs JVM
+6. Scala Compilation
+7. Variable and datatype
+
+
+Practical / Assignment:
+1. Demo of Immutability using val vs var
+2. Demo of Type Inference
+
+Problems:
+1. Hello World Example
+2. Swapping of two variables
+3. Swapping of two variables without using third variable
+
+
+
