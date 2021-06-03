@@ -1,0 +1,26 @@
+String :
+1. What is String?
+2. How to declare String?
+3. Function related to String:
+	length(), concat(), charAt(), trim(), split(), replaceAll(), etc
+	
+4. String Iterpolation
+5. printf
+
+
+Number System:
+	Decimal and Binary
+	Number representation in Computer
+	Signed and Unsigned
+	2's complement
+
+Demo :
+1. Bubble Sort
+2. String Demo
+
+Problems :
+1. To check prime number
+2. Reverse of a number
+
+	
+

@@ -7,8 +7,11 @@ object TwoDimArray {
     
     //println(ar(0)(1))
     
+    //ar.length
+    
     
     for(r <- 0 to 2){
+      
       for(c <- 0 to 2 ){
         print("\t"+ar(r)(c))
       }

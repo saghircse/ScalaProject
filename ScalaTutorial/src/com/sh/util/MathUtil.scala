@@ -4,7 +4,9 @@ object MathUtil {
   def sum(a:Int, b:Int): Int = {
     
     val s = a+b;
-    return s;
+   
+    
+    return 5;
   }
   
   def multiply(a:Int, b:Int): Int = {
