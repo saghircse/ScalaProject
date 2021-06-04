@@ -7,7 +7,13 @@ object TestScala {
     
     val name = "Bern"
     val x : Int = 15
-    val y = 10
+    val y : Long = 10
+    
+    println(y)
+    println(Int.MaxValue)
+    println(Int.MaxValue +1)
+    println(Int.MaxValue +2)
+    println(Int.MaxValue +3)
     
     //========================
     

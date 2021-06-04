@@ -9,6 +9,11 @@ object TestScala {
 }
 
 4. Language Level
+	Low Level
+	High Level
+	Mid Level
+	
+Scala is a high level programming language.
 5. JDK vs JRE vs JVM
 6. Scala Compilation
 7. Variable and datatype
@@ -20,8 +25,8 @@ Practical / Assignment:
 
 Problems:
 1. Hello World Example
-2. Swapping of two variables
-3. Swapping of two variables without using third variable
+2. Sum of two variables
+
 
 
 

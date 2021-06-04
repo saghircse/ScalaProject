@@ -3,6 +3,14 @@ package com.sh.test
 object DemoScala1 {
   def main(args: Array[String]): Unit = {
     
+     // Immutable - value can not be changed
+      val ay = 10   
+      //ay = 15
+      
+      // Mutable - value can be changed
+      var bx = 5
+      bx = 13
+    
     
     val x = "Hello "
     val y = "Bern"
@@ -31,6 +39,20 @@ object DemoScala1 {
     println("Hello World")
     println("Hello \nWorld")
     println(raw"Hello \nWorld")
+    
+    
+          val a1 = 10.5 // Double
+      val b1 : Int = 20 // Int
+      
+      val c = 'A' // Character
+      
+      val name = "Bern" // String
+      
+      val flag = true // Boolean
+      
+      println(Byte.MaxValue)
+      println(Int.MaxValue)
+      println(Long.MaxValue)
     
     
   }

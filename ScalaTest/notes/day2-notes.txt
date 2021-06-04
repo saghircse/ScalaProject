@@ -1,0 +1,17 @@
+
+1. Variables : Mutable (var) and Immutable (val)	
+2. if-else
+3. Few operators ( Assignment, Relational, Arithmetic, etc )
+
+
+Practical / Assignment:
+1. Swapping of two variables
+2. Demo of if-else
+3. Demo Even Odd
+
+Problems(HW)
+1. Swapping of two variables without using third variable
+2. Positive/Negative Numbers
+3. Largest of two numbers
+
+4. Smallest of three numbers
