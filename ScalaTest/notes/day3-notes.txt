@@ -1,26 +1,19 @@
-1. String Interpolation 
-String Interpolation allows users to embed variable or expressions reference directly in processed string literal.
-Three Types
-	s  Interpolation
-	f Interpolation
-	raw Interpolation
-	
-2. Types of Comments
-	Sigle Line
-	Multi Line
-	Documentation comment
-	
-3. if-else
-
-4. Few operators ( Assignment, Relational, Arithmetic, etc )
-
+Decision making :
+	1. IF statement
+	2. IF-ELSE statement
+	3. IF-ELSE IF…..ELSE ladder
+	4. Nested IF-ELSE
+Loop
+	1. WHILE loop 
+	2. DO WHILE loop
+	3. FOR loop
 
 Practical / Assignment:
-1. Demo of String Interpolation
-2. Demo of if-else
+1. Demo of if-else ladder and nested if-else
+2. Demo of while, do while and for loop
+3. Sum of numbers in range
 
-Problems
-1. Even Odd
-2. Positive/Negative Numbers
-3. Largest of two numbers
-4. Smallest of three numbers
+Problems(HW)
+1. Factorial of a number
+	fact(5) = 5*4*3*2*1 = 1*2*3*4*5
+2. Sum of all even numbers between a range
