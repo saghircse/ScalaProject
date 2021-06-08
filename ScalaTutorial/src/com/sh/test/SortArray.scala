@@ -26,20 +26,34 @@ object SortArray {
         println("")
       }
       
+      println("===========Bubble Sort==========")
+      //val ar2 = Array(5,10,20,6,2);
+      val ar2 = Array(5,10,20,60,200);
       
       // Bubble Sort
       for(i <- 0 to l-1){ 
-        for(j <- 0 to l-2){
-          if(ar(j)> ar(j+1)){
-            var t = ar(j)
-            ar(j) = ar(j+1)
-            ar(j+1) = t
+        var isSwap=0
+        for(j <- 0 to l-2-i){
+          if(ar2(j)> ar2(j+1)){
+            // Swap
+            var t = ar2(j)
+            ar2(j) = ar2(j+1)
+            ar2(j+1) = t
+            
+            isSwap = isSwap+1
             
           }
         } 
+        
         print("==="+"step :"+i)
-        ar.foreach(x => print("   "+x))
+        ar2.foreach(x => print("   "+x))
         println("")
+        
+        if(isSwap==0){
+          //break
+          println("Already Sorted...break it")
+        }
+        
       }
       
       
