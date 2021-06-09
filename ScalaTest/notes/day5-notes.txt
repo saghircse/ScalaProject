@@ -1,0 +1,6 @@
+Loop and Array Practice
+ 
+Demo:
+1. Linear Search
+2. Bubble Sort
+3. break implementation in Scala
