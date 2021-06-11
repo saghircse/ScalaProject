@@ -1,0 +1,16 @@
+String:
+1. What is String?
+2. How to declare String?
+3. Function related to String:
+	length(), concat(), charAt(), trim(), split(), replaceAll(), reverse() etc
+	
+4. String Iterpolation
+5. printf
+
+Problem : 
+val x = "This is scala I am learning scala"
+1.  Reverse of words in sentence
+scala learning am I scala is This
+
+2.  Reverse of each word of the sentence
+sihT si alacs I ma gninrael alacs

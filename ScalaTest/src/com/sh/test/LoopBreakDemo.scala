@@ -9,6 +9,7 @@ object LoopBreakDemo {
     val loopBreak = new Breaks;
   
     loopBreak.breakable{
+      
     for(i <- 1 to 20){
       
       if(i>=5){
@@ -20,7 +21,14 @@ object LoopBreakDemo {
       println(i)
     } // for
     
-    } //loopBreak
+    }
+    
+    
+    
+    
+    
+    
+    
     
     
     
