@@ -1,0 +1,28 @@
+
+Roadmap:
+1. Big Data Overview
+2. Hadoop Overview
+
+Prerequisite for Apache Spark:
+1. Programming Laguage - Basics of Java, Scala or Python
+2. Basic SQL
+3. Shell Script or Unix commands
+
+Big Data Engineer
+1. SQL
+2. Hadoop - Hive/ Sqoop
+3. Apache Spark - Scala/ Python
+4. Apache Kafka for real time use case
+5. Cloud - Amazon AWS / Google GCP/ Microsoft Azure
+
+Data Engineer :
+	ETL ( Extract, Transform, Load)
+	Oracle - Transaction info
+	MySQL - Customer info
+	Files(JSON, XML) -> 
+Apache Spark:
+1. Spark Core
+2. Spark SQL
+3. Spark Streaming
+4. Spark ML
+5. Spark GraphQL

@@ -1,0 +1,22 @@
+Array 
+ - Collection
+ - Fixed size
+ - elements of same type
+ - Indexed ( starts with 0 )
+ - Random Access using index
+ - Mutable
+ 
+Demo:
+1. Declaring Array Variables
+2. Processing Array
+	print all
+	sum of all
+	Find minimum
+3. Reading array elements from console
+4. How to use Command Line Argument?
+
+Problems:
+1. Sum of elements of Array
+2. Search an element in Array
+3. Find largest/smallest number from Array
+3. Sorting

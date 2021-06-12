@@ -7,8 +7,10 @@ class Employee(eId:Int, eName : String, var eSalary:Double) {
   }
   
   def getName() : String={
-    return eName
+    eName
   }
+  
+  def getNameX : String= eName
   
   
   def getId() : Int={

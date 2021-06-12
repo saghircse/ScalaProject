@@ -1,0 +1,29 @@
+=>Object:
+	Object is a real world entity like car,book, etc. 
+	It contains state and behavior :
+		1) State: data values of an object are known as its state.
+		2) Behavior: functionality that an object performs is known as its behavior.
+	Object in scala is an instance of class. It is also known as runtime entity.
+
+=>Class:
+	Class is a template or a blueprint. 
+	It is also known as collection of objects of similar type.
+
+
+=>In scala, a class can contain:
+	1. Data Members - state (variable)
+	2. Member method - Behavior
+	3. Constructor - To create and initialize objects
+	4. Block - {..}
+	5. Nested Class - Class inside another class
+	6. Super class information etc in case Inheritance
+
+
+
+=> Anonymous Object
+	An object which has no reference name is called anonymous object.
+	It is good to create anonymous object when you don't want to reuse it further.
+
+=> Singleton Object
+
+=> Companion Object
