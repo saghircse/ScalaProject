@@ -1,0 +1,36 @@
+Function :
+	1. What is Function?
+	2. Advantage of function
+	3. Inbuilt function vs User defined Function
+	4. Declaration and definition of function
+	
+//================================================	
+
+Running Scala/Java Program is a two step process:
+1. Compilation
+	scalac TestSum.scala
+	javac TestSum.java
+
+2. Run
+	scala TestSum
+	java TestSum
+	
+//================================================	
+Reading Value from outside :
+1. Using Console
+2. Using Command Line Argument
+	scalac TestSum.scala
+	scala TestSum 5 10
+3. Using File,datbase,network,etc
+
+//================================================	
+
+Demo : 
+1. Demo of Function - sum of square of two Integers
+2. Command Line Arguments Demo
+
+//================================================	
+
+Problem : 
+1. Write a function to check Prime Number
+2. Pass a sentence from command line and search for a word(example : hello)
