@@ -1,0 +1,20 @@
+Closure :
+It is a type of function which uses one or more free variables. 
+The return value of the function is dependent on these free variable.
+
+
+Free variable :
+	Variable defined outside the function
+	Variable is neither defined inside the function nor passed as function parameter
+	
+Two types : 
+1. Pure Function - If free variable is immutable ( val x = 5)
+2. Impure function - If free variable is mutable ( var y = 6, y=3)
+
+=========================================================================
+OOPs concepts :
+1. Class and Object
+2. Inheritance
+3. Polymorphism
+4. Abstraction
+5. Encapsulation
