@@ -1,0 +1,34 @@
+Function :
+1. What is Function?
+2. Advantage of function
+3. Inbuilt function vs User defined Function
+4. Declaration and defination of function
+
+Demo :
+1. Prime Number
+2. Reverse of a number
+3. Palindrome Number
+4. Linear Search
+
+Problems :
+1. Binary Search
+2. Print following patterns
+
+*
+**
+***
+****
+
+1
+12
+123
+1234
+
+
+1
+22
+333
+4444
+
+	
+

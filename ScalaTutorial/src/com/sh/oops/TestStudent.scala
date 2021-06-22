@@ -51,7 +51,7 @@ object TestStudent {
     
     //println(s1.roll +" | "+s1.name)
      
-    val s2 = new StudentX(2,"San")
+    var s2 = new StudentX(2,"San")
     s2.display()
     
     val s3 = new StudentY(3,"John")
@@ -59,6 +59,9 @@ object TestStudent {
     
     // Anonymous object
     new StudentY(4,"Johnous").display()
+    
+    s2=null
+    
     
     // Singleton object : 
     //Dont need to create object...Use variables or methods directly

@@ -1,0 +1,4 @@
+Function with Variable number of arguments
+Currying function
+Function with default parameters
+Nested Function
