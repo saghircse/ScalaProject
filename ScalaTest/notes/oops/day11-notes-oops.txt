@@ -1,0 +1,18 @@
+OOPs concepts :
+1. Class and Object
+2. Inheritance
+3. Polymorphism - Overloading and Overriding
+4. Abstraction
+5. Encapsulation
+
+Demo : 
+1. Created Student class with states and behaviour
+	states -> name,age,marks
+	behaviour -> display()
+2. Demonstrate Class and Object
+3. Demonstrate encaptulation and abstraction
+	
+HW :
+1. Created Employee class with states and behaviour
+	states -> name,age,position
+	behaviour -> display(), getAgeGroup()

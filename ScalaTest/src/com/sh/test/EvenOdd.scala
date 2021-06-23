@@ -7,11 +7,16 @@ object EvenOdd {
     println("Enter a number : ")
     val n = scala.io.StdIn.readInt() // reading Input
     
+    /*
     if(n%2 == 0){
       println(s"$n is Even")
     }else{
       println(s"$n is Odd")
     }
+    * 
+    */
+    
+    FunctionDemo.checkEvenOdd(n)
     
   }
 }

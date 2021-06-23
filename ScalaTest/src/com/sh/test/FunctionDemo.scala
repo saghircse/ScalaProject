@@ -1,7 +1,7 @@
 package com.sh.test
 
 object FunctionDemo {
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]) : Unit = {
     
     println("Enter two Numbers :")
     val a = scala.io.StdIn.readInt()
@@ -28,7 +28,7 @@ object FunctionDemo {
   }
   
 //  def checkEvenOdd(a:Int) : Unit ={
-  def checkEvenOdd(a:Int) ={    
+  def checkEvenOdd(a:Int)  ={    
     if(a%2 == 0){
       println(s"$a is Even")
     }else{
