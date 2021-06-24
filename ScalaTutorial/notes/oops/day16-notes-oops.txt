@@ -1,0 +1,26 @@
+OOPs concepts :
+1. Class and Object
+2. Inheritance
+3. Polymorphism - Overloading and Overriding
+4. Abstraction
+5. Encapsulation
+
+Demo : 
+1. Create Employee class with states and behaviour
+	states -> name,age,position
+	behavior -> display(), getAgeGroup()
+	
+2. Create Point(x,y) class with states and behaviour
+	states -> x,y
+	behavior -> display(), move(dx,dy)
+	
+3. Location(x,y,z) class with states and behavior and extend Point(x,y)
+	states -> x,y,z
+	behavior -> display(), move(dx,dy,dz)
+	
+4. Demonstrate Inheritance and Polymorphism (Overriding and Overloading)
+	
+HW :
+1. Create Point(x,y) class with states and behavior
+	states -> x,y
+	behavior -> display(), move(dx,dy), distanceBetweenTwoPoints()

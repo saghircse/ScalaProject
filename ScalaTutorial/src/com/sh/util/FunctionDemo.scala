@@ -20,6 +20,9 @@ object FunctionDemo {
     multiplier(5,3)
     multiplier(5)
     
+    val x = add2(5)
+    x(6)
+    
   }
   
   // Function with variable number of arguments
@@ -75,7 +78,7 @@ object FunctionDemo {
   def strconcat(s1:String,s2:String) =s1+s2
   def strconcat2(s1:String)(s2:String) =s1+s2 // Currying
   
-  
-  
+  // Partially Applied function
+  def add2(a: Int) = (b: Int) => {val x=a + b; println(x)};
   
 }
