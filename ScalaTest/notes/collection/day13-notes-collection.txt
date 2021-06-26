@@ -1,0 +1,43 @@
+==>Varibles
+	val x1 = 4
+	val x2 = 5
+	val x3 = 7
+	::::
+	::::
+	::::
+	val x100 = 35
+	
+==>Array - 
+Array 
+ - Collection
+ - Fixed size
+ - elements of same type
+ - Indexed ( starts with 0 )
+ - Random Access using index
+ - Mutable
+	var ar = Array[Int](100)  ---OR,
+	val ar = Array(4,5,10,30,35,....)
+	How to access? => ar(0),ar(1)
+	ar(2)=7 <--- it will replace 10
+	
+Disadvantage of Array
+1. Fixed size : can not increase or decrease size of array once created
+2. Insertion and deletion at middle or start of the array is very costly
+ 
+==>Linked List - 
+Linked List 
+ - Similar to array but differeces are
+	1. List is immutable
+	2. List represnt a linked list where as arrays are flat
+	
+==> Map/JSON
+JSON - {"Name":"Bern", "Loc":"Austria"} -- key-value pairs
+==============================================
+
+==> Collection : 
+	1. List 	: List[T] is linked list of type T
+	2. Set		: Holds unique elements
+	3. Map		: Holds elements key-value pairs
+	4. Tuple	: Tuple can hold elements of different types unlike array or list	
+	5. Option	: Option[T] provides a container to hold zero or one element of type T.
+	6. Iterator	: It is not a collection, but it is a way to access the ele of a collection one by one.
