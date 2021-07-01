@@ -1,0 +1,17 @@
+
+Scala Collection : It contains classes and traits to collect data.
+	1. scala.collection.mutable 
+		- You can add, remove and update data using this package.
+		- You need to import scala.collection.mutable in your code.
+	2. scala.collection.immutable
+		- You can not modify data using this package.
+		- Scala imports this package by default.
+		
+Set : 
+	- It is used to store unique elements.
+	- Insertion order is not maintained
+	- Example :  
+		val s1 = Set()
+		
+	
+	- Functions : head, tails, isEmpty, 

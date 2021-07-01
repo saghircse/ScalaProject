@@ -1,0 +1,52 @@
+Exception in thread "main" java.lang.NumberFormatException: For input string: "ss"
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+
+Exception : Abnormal condition
+
+================
+Exception Handling : 
+	It is a mechanism to handle abnormal conditions.
+	It avoid termination of program in unexpected way.
+	
+try{
+	// problemetic 
+}catch{
+	// if exception occurs
+}finally{
+	// Always executed
+}
+
+=============================================================================
+
+project :
+	package-1:
+		Class : methods & variables
+		Object : methods & variables
+		
+	package-2:
+		Class : methods & variables
+		Object : methods & variables
+		
+		
+One project -> multiple packages -> Each package can have multiple class and objects
+===============================================
+===============================================
+
+Access Modifiers:
+	These modifiers restrict accesses to the members (methods/variables) to certain regions of code.
+	
+Three level of access Modifiers:
+1. Private :
+	- Keyword Used : private
+	- It is only visible inside the class or objects that contains the member definition.
+	
+2. Protected :
+	- Keyword Used : protected
+	- It is visible :
+		- inside the class or objects that contains the member definition.
+		- from subclass( child class ) of the class in which the member is defined irrespective of package
+	
+3. Public: 
+	- Keyword Used : It is not required to specify Public keywords for public members
+	- It is default access modifier.
+	- It can be access from anywhere.

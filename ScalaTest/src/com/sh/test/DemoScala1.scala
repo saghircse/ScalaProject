@@ -23,22 +23,20 @@ object DemoScala1 {
     val b = 15
     val sum = a + b
     
-    
-    // Way-1 : By concatenation ( it does not check data type )
+    // Way-0 : By concatenation 
     println("Sum of " + a + " and "+ b + " ="+sum)
     
-    // Way-2 : s interpolation
-    val s1 = s"Sum of $a and $b = $sum"
-    println(s1)
+    // Way-1 : s interpolation ( it does not check data type )
+    println(s"Sum of $a and $b = $sum")
+    // Use curly braces {} to evaluate an expression 
+    println(s"Sum of $a and $b = ${a+b}")
     
-    // Way-3 : f interpolation ( it also checks data type )
-    val s2 = f"Sum of $a%f and $b%d = $sum%f"
-    println(s2)
+    // Way-2 : f interpolation ( it also checks data type )
+    println(f"Sum of $a%f and $b%d = $sum%f")
     
-    // Way-4 : raw interpolation 
-    println("Hello World")
-    println("Hello \nWorld")
-    println(raw"Hello \nWorld")
+    // Way-3 : raw interpolation 
+    println("Hello \nWorld")    // It will print Hello and World in separate lines. 
+    println(raw"Hello \nWorld") // It will print Hello \nWorld as it is. 
     
     
           val a1 = 10.5 // Double

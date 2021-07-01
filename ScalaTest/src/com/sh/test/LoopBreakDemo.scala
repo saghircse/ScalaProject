@@ -1,20 +1,22 @@
 package com.sh.test
 
-import scala.util.control._
+import scala.util.control.Breaks._
 
 
 object LoopBreakDemo {
   def main(args: Array[String]): Unit = {
     
-    val loopBreak = new Breaks;
+    //val loopBreak = new Breaks;
   
-    loopBreak.breakable{
+    //loopBreak.
+    breakable{
       
     for(i <- 1 to 20){
       
       if(i>=5){
         // break - In scala, there is no direct break statement
-        loopBreak.break()
+        //loopBreak.break()
+        break()
         
       }
       
