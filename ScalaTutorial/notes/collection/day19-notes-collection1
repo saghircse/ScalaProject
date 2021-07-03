@@ -1,0 +1,79 @@
+==>Variables
+
+	val x1 = 4
+	val x2 = 5
+	val x3 = 7
+	::::
+	::::
+	::::
+	val x100 = 35
+	
+==>Array - 
+Array 
+ - Collection
+ - Fixed size
+ - elements of same type
+ - Indexed ( starts with 0 )
+ - Random Access using index
+ - Mutable
+	var ar = Array[Int](100)  ---OR,
+	
+	val ar = Array(4,5,10,30,35,....)
+	How to access? => ar(0),ar(1)
+	ar(2)=7 <--- it will replace 10
+	
+Disadvantage of Array
+1. Fixed size : can not increase or decrease size of array once created
+2. Insertion and deletion at middle or start of the array is very costly
+ 
+==>Linked List - 
+Linked List 
+ - Similar to array but differeces are
+	1. List is immutable
+	2. List represnt a linked list where as arrays are flat
+	
+==> Map/JSON
+JSON - {"Name":"Bern", "Loc":"Austria"} -- key-value pairs
+
+{"zwingen" -> Array(gezwungen,zwang,zwingend), "go" -> Array(go,went,gone,going)}
+==============================================
+
+==> Collection : 
+	1. List 	: List[T] is linked list of type T
+	2. Set		: Holds unique elements
+	3. Map		: Holds elements key-value pairs
+	4. Tuple	: Tuple can hold elements of different types unlike array or list	
+	5. Option	: Option[T] provides a container to hold zero or one element of type T.
+	6. Iterator	: It is not a collection, but it is a way to access the ele of a collection one by one.
+	
+===============================================
+
+Scala Collection : It contains classes and traits to collect data.
+	1. scala.collection.mutable 
+		- You can add, remove and update data using this package.
+		- You need to import scala.collection.mutable in your code.
+	2. scala.collection.immutable
+		- You can not modify data using this package.
+		- Scala imports this package by default.
+		
+Set : 
+	- It is used to store unique elements.
+	- Insertion order is not maintained
+	- scala.collection.immutable.Set
+	- Example :  
+		val s1 = Set()
+	- Functions : head, tails, isEmpty, 
+List :	
+	Similar to array but differences are
+	1. List is immutable
+	2. List represent a linked list where as arrays are flat
+	
+Map : 
+	- It is used to store elements in pairs of key and values.
+		
+
+
+
+
+
+
