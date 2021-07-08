@@ -1,0 +1,82 @@
+Setup Spark project in Eclipse using maven
+---------------------------------	
+JAR -> Java ARchive ( Libraries )
+
+Dependency :
+	Way-1 (normal way): Downoload the respective jar files and use it
+	Way-2 (standard way): Use build tools
+	
+What is build tool?
+Build tools are used to download/setup dependencies or libraries
+Example : maven, ivy, gradle,etc
+We are going to use maven
+
+=======================================
+Big Data:
+	1. Huge Volume
+	2. High Velocity
+	3. High Variety 
+		- Structured(data in table) 
+		- Semi-structured(json,csv) 
+		- Unstructured(audio,video)
+		
+Two challenges :
+	1. Storage
+	2. Processing
+	
+Single machine vs Cluster of machines 
+	
+To solve this problem :
+Google relaesed two white papers:
+	1. GFS (Google File System) - To solve storage problem
+	2. MapReduce - Processing framework
+	
+----------------------------
+Yahoo
+Doug Cutting + Mike Cafarella ;
+	- They have implemented both white papers:
+	- Hadoop = HDFS + MapReduce
+		- HDFS(Hadoop Distributed File System) <---- implementation of GFS
+		- MapReduce
+Apache Hive
+Apache Kafka
+Apache Sqoop
+-------------------
+
+Spark -> 
+	- Enhancement over MapReduce.
+	- It is not replacement of MapReduce
+	- Independent of hadoop
+	
+--------------------
+
+Apache Spark :
+	- Apache Spark is an open-source unified analytics engine for large-scale data processing.
+	- Java, Scala, Python, R
+
+Spark core	- (RDD)
+Spark SQL	- (Dataframe and Dataset)
+Spark Streaming - ( DStream, strutured streaming )
+Spark ML
+Spark GraphQL
+
+------------------------
+Scala
+	main() method --> entry point for any Scala program
+	
+Spark
+	sparkContext --> entry point for any Spark application
+	1. [Before Spark 2.0] sparkContext -> sqlContext, streamingContext 
+	2. [After  Spark 2.0] sparkSession = (sparkContext + sqlContext + streamingContext)
+	
+-----------------------
+RDD -> Resilient Distributed Dataset
+	- The main abstraction Spark 
+	- It is a collection of elements partitioned across the nodes of the cluster 
+		that can be operated on in parallel.
+	- Why Resilient ? - RDDs automatically recover from node failures.
+
+How to create RDD?
+	1. Using any Scala collection (List, Set, Map, Seq)
+	2. By reading files from HDFS, local FS,etc
+	
