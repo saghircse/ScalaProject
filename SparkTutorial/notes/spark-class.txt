@@ -22,14 +22,19 @@ Big Data:
 		
 Two challenges :
 	1. Storage
-	2. Processing
+	2. Data Processing
 	
-Single machine vs Cluster of machines 
+Single machine
+
+
+Cluster - group of machines 
+
+Distributed Computing
 	
 To solve this problem :
 Google relaesed two white papers:
 	1. GFS (Google File System) - To solve storage problem
-	2. MapReduce - Processing framework
+	2. GMR (Google   MapReduce) - Processing framework
 	
 ----------------------------
 Yahoo
@@ -37,23 +42,22 @@ Doug Cutting + Mike Cafarella ;
 	- They have implemented both white papers:
 	- Hadoop = HDFS + MapReduce
 		- HDFS(Hadoop Distributed File System) <---- implementation of GFS
-		- MapReduce
+		- MapReduce <---- implementation of GMR
+Hadoop was donated to Apache -- Apache Hadoop
+-----------------------------
 Apache Hive
 Apache Kafka
 Apache Sqoop
 -------------------
-
 Spark -> 
 	- Enhancement over MapReduce.
 	- It is not replacement of MapReduce
 	- Independent of hadoop
 	
---------------------
-
+-------------------
 Apache Spark :
 	- Apache Spark is an open-source unified analytics engine for large-scale data processing.
 	- Java, Scala, Python, R
-
 Spark core	- (RDD)
 Spark SQL	- (Dataframe and Dataset)
 Spark Streaming - ( DStream, strutured streaming )
@@ -67,7 +71,7 @@ Scala
 Spark
 	sparkContext --> entry point for any Spark application
 	1. [Before Spark 2.0] sparkContext -> sqlContext, streamingContext 
-	2. [After  Spark 2.0] sparkSession = (sparkContext + sqlContext + streamingContext)
+	2. [Since  Spark 2.0] sparkSession = (sparkContext + sqlContext + streamingContext)
 	
 -----------------------
 RDD -> Resilient Distributed Dataset
@@ -75,8 +79,51 @@ RDD -> Resilient Distributed Dataset
 	- It is a collection of elements partitioned across the nodes of the cluster 
 		that can be operated on in parallel.
 	- Why Resilient ? - RDDs automatically recover from node failures.
+	- Immutable
+	- Lazy evaluation
 
 How to create RDD?
 	1. Using any Scala collection (List, Set, Map, Seq)
 	2. By reading files from HDFS, local FS,etc
+	
+Two types of operations on RDD :
+	1. Transformation (map,flatMap) -- lazy
+	2. Action (sum,count,collect,foreach, write)
+
+-----------------Partition-1--------------	
+1            		1
+2 -map(square)--> 	4  -filter(even)-->	4
+3            		9                 
+-----------------Partition-2--------------            
+4            		16                	16
+5 -map(square)--> 	25 -filter(even)-->
+6            		36                	36
+-----------------Partition-3--------------            
+7            		49                
+8 -map(square)--> 	64 -filter(even)-->	64
+9            		81
+
+=================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
