@@ -1,0 +1,4 @@
+We were learning Scala
+We have completed Scala
+We started learnig Spark using Scala
+We will also complete Spark

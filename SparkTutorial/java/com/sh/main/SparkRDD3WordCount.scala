@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession
  * 	2. By reading files from HDFS, local FS,etc
  */
 
-object SparkRDD2 {
+object SparkRDD3WordCount {
   def main(args: Array[String]): Unit = {
     
     // Creating Spark Session
@@ -22,20 +22,24 @@ object SparkRDD2 {
 		sc.setLogLevel("ERROR")
 
 		// Way-2.  By reading files from HDFS, local FS,etc
-		val filePath = "E:\\CODE\\SPARK\\SparkTutorial\\files\\input\\"
+		val filePath = "E:\\CODE\\SPARK\\SparkTutorial\\files\\input"
+		val lineRDD = sc.textFile(filePath)
 		
-		val fileRDD = sc.textFile(filePath).repartition(6)
-		println("No of partition in fileRDD = "+fileRDD.getNumPartitions)
-		fileRDD.foreach(println)
+		//val listRDD=lineRDD.map(x => x.split(" ").toList)
+		//listRDD.foreach(println)
+		
+		// Create RDD of words from RDD of lines (filter words having length greater than 2)
+		val wordRDD = lineRDD.flatMap(x=>x.split(" ")).filter(x=> x.length()>2)
+		
+		// Create RDD of Tuple(word,1)
+		val wordTupleRDD = wordRDD.map(x=> (x,1))
+		//wordTupleRDD.foreach(println)
 		
 		
-		// Writting RDD as text file
-		val outPath = "E:\\CODE\\SPARK\\SparkTutorial\\files\\output"
-		//fileRDD.repartition(1).saveAsTextFile(outPath)
-		fileRDD.coalesce(1).saveAsTextFile(outPath)
+		val wordCountRDD=wordTupleRDD.reduceByKey((a,b) =>a+b)
+		wordCountRDD.foreach(println)
 
-		
-		
+
 		
     //val x = scala.io.StdIn.readLine()
   }

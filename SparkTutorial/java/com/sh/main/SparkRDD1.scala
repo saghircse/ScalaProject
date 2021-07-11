@@ -26,20 +26,25 @@ object SparkRDD1 {
 
 		// Way-1. Using any Scala collection (List, Set, Map, Seq)
 		val nums = List(1,2,3,4,5,6,7,8,9)
-		val numsRDD= sc.parallelize(nums,5) // Parallelize will distribute across nodes
+		val numsRDD= sc.parallelize(nums,3) // Parallelize will distribute across nodes
 		println("No of partition in numsRDD = "+numsRDD.getNumPartitions)		
-		//val linesArray = linesRDD.collect() // collect will collect from all nodes to driver
+		
+		//val linesArray = numsRDD.collect() // collect will collect from all nodes to driver
 		
 		println("==================>numsRDD")
-		numsRDD.foreach(println)
+		//numsRDD.foreach(println) // This will not show output in cluster mode
+		//linesArray.foreach(println) // This will show output
+		
 		
 		val squareRDD = numsRDD.map(x => x*x)
 		println("==================>squareRDD")
-		squareRDD.foreach(println)
+		//squareRDD.foreach(println)
 		
 		val evenRDD=squareRDD.filter(x => x%2==0)
-		println("==================>squareRDD")
-		evenRDD.foreach(println)
+		println("==================>even squareRDD")
+		evenRDD.foreach(println) // Action
+		
+		//numsRDD.map(x => x*x).filter(x => x%2==0)
 		
 		
 		

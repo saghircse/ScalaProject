@@ -3,7 +3,7 @@ Setup Spark project in Eclipse using maven
 JAR -> Java ARchive ( Libraries )
 
 Dependency :
-	Way-1 (normal way): Downoload the respective jar files and use it
+	Way-1 (normal way): Download the respective jar files and use it
 	Way-2 (standard way): Use build tools
 	
 What is build tool?
@@ -87,7 +87,7 @@ How to create RDD?
 	2. By reading files from HDFS, local FS,etc
 	
 Two types of operations on RDD :
-	1. Transformation (map,flatMap) -- lazy
+	1. Transformation (map,flatMap, filter) -- lazy
 	2. Action (sum,count,collect,foreach, write)
 
 -----------------Partition-1--------------	
@@ -103,27 +103,42 @@ Two types of operations on RDD :
 8 -map(square)--> 	64 -filter(even)-->	64
 9            		81
 
-=================
+
+========================== Map vs FlatMap===========
+map --> one to one
+RDD[String] -- --map(x=>x.split(" "))-> RDD[Array[String]]
+I was learning Scala	--map(x=>x.split(" "))-> Array("I", "was","learning","Scala")
+I have completed Scala	--map(x=>x.split(" "))-> Array("I", "have", "completed", "Scala")
+--------
+flatMap --> one to many
+RDD[String] -- --flatMap(x=>x.split(" "))-> RDD[String]
+I 
+was 
+learning 
+Scala
+I 
+have 
+completed 
+Scala
+
+==================Word Count Example========================
+Input :
+
+I was learning Scala
+I have completed Scala
+I started learning Spark using Scala
+I will also complete Spark
+------------------------------------
+We were learning Scala
+We have completed Scala
+We started learning Spark using Scala
+We will also complete Spark
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+Output :
+I	4
+We	4
+:::
+:::
+Scala	6
+Spark	4

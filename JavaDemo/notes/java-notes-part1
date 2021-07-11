@@ -1,0 +1,71 @@
+1. Java Overview
+2. Basic ( variables, data types, operators, keywords)
+3. Control Statements and loop
+	if-else, switch, for, while, do while, break, continue
+4. Array and String (String vs StringBuffer vs StringBuilder)
+5. Function
+6. OOPs Concepts
+	class and objects
+	Polymorphism
+	Inheritance
+	Abstraction
+	Encaptulation
+	
+	Constructors, methods, static
+	Interface vs Abstract class vs Class
+	
+7. Exception Handling
+8. Collection Framework (List, Set, Map)
+9. Multithreading
+
+======================================================
+
+Java
+	- Object oriented programmig language
+	- High level language
+	- Developed by James Gosling
+	- Platform Independent ( because of java bytecode ) and Portable
+
+Two steps in Java:	
+1. Compilation :
+	javac Test.java ----> Test.class (java bytecode)
+2. Run :
+	java Test
+--------------------------
+JDK vs JRE vs JVM --> These are not platform independent
+-------------------------
+=========================================================
+
+Variables : Name of memory location. It holds value
+
+Data Types : (int, float, double, char, String, etc)
+
+Operaters :
+Types of operators :
+1. Binary operators : It takes two operands
+	1. Arithmetic operators (+,-,*,/,%)
+	2. Relational Operators ( <, >, ==, <=, >=, != )
+	3. Logical Operaters ( &&, ||)
+	4. Assignment Operaters (=, +=, -=,etc)
+2. Unary operators (++,--) : It takes one operand
+3. Ternary operator ( ? : ) / Conditional Operator  : It takes three operands
+ <condition>?<True>:<Flase>;
+
+==========================================================
+
+Array - 
+	Collection of elements of similar data type
+	Fixed size
+	stores elements in contiguos memory location
+	Indexed based ( starting from 0)
+	
+int x; // declare
+x = 5; // Inialize
+int x = 5;
+-----------------------Way-1
+int ar[] = new int[10]; // Declare
+ar[0]=5;
+ar[3]=10;
+----------------------Way-2
+int ar[] = {4,5,7,8,9}
+	
