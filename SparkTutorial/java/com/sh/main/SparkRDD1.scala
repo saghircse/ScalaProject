@@ -29,6 +29,11 @@ object SparkRDD1 {
 		val numsRDD= sc.parallelize(nums,3) // Parallelize will distribute across nodes
 		println("No of partition in numsRDD = "+numsRDD.getNumPartitions)		
 		
+		val sumRDD=numsRDD.reduce(_+_)
+		
+		
+		
+		
 		//val linesArray = numsRDD.collect() // collect will collect from all nodes to driver
 		
 		println("==================>numsRDD")

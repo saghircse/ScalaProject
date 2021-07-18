@@ -22,7 +22,7 @@ object SparkRDD2 {
 		sc.setLogLevel("ERROR")
 
 		// Way-2.  By reading files from HDFS, local FS,etc
-		val filePath = "E:\\CODE\\SPARK\\SparkTutorial\\files\\input\\"
+		val filePath = "E:\\CODE\\SPARK\\SparkTutorial\\files\\input\\file1.txt"
 		
 		val fileRDD = sc.textFile(filePath).repartition(6)
 		println("No of partition in fileRDD = "+fileRDD.getNumPartitions)
@@ -32,7 +32,8 @@ object SparkRDD2 {
 		// Writting RDD as text file
 		val outPath = "E:\\CODE\\SPARK\\SparkTutorial\\files\\output"
 		//fileRDD.repartition(1).saveAsTextFile(outPath)
-		fileRDD.coalesce(1).saveAsTextFile(outPath)
+		//fileRDD.coalesce(1).saveAsTextFile(outPath)
+		fileRDD.saveAsTextFile(outPath)
 
 		
 		

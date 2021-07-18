@@ -10,15 +10,7 @@ public class PalindromeNumber {
 		// Six Five Seven Eight
 		
 		// Find reverse
-		
-		int t = n;
-		int rev=0;
-		int r=0;
-		while(t>0) {
-			r=t%10;
-			rev = rev*10 + r;
-			t=t/10;
-		}
+		int rev =reverseNumber(n); 
 		
 		System.out.println("Reverse = "+rev);
 		
@@ -29,5 +21,21 @@ public class PalindromeNumber {
 		}
 
 	}
+	
+	
+	static int reverseNumber(int n) {
+		int t = n;
+		int rev=0;
+		int r=0;
+		while(t>0) {
+			r=t%10;
+			rev = rev*10 + r;
+			t=t/10;
+		}
+		
+		return rev;
+		
+	}
+	
 
 }

@@ -1,9 +1,25 @@
+Blocksize :
+	Windows : 4kB
+	Hadoop(HDFS) : 128MB 
+----------------------------	
+f1->6KB 	
+f2->4KB	
+
+way-1
+[f1(4KB)]	[f1(2KB) f2(2K)]	[f2(2k)]
+
+way-2
+[ f1(4KB) ]	[f1(2KB)]	[f2(4K)]
+
+
+
+=================
 Setup Spark project in Eclipse using maven
 ---------------------------------	
 JAR -> Java ARchive ( Libraries )
 
 Dependency :
-	Way-1 (normal way): Download the respective jar files and use it
+	Way-1 (normal way): Downoload the respective jar files and use it
 	Way-2 (standard way): Use build tools
 	
 What is build tool?
@@ -58,9 +74,9 @@ Spark ->
 Apache Spark :
 	- Apache Spark is an open-source unified analytics engine for large-scale data processing.
 	- Java, Scala, Python, R
-Spark core	- (RDD)
-Spark SQL	- (Dataframe and Dataset)
-Spark Streaming - ( DStream, strutured streaming )
+Spark core	- (RDD) - sparkContext
+Spark SQL	- (Dataframe and Dataset) - sparkSession/sqlContext
+Spark Streaming - ( DStream, strutured streaming ) - sparkSession/streamingContext
 Spark ML
 Spark GraphQL
 
@@ -84,10 +100,19 @@ RDD -> Resilient Distributed Dataset
 
 How to create RDD?
 	1. Using any Scala collection (List, Set, Map, Seq)
+		sc.parallelize(<collection>,<partitions>)
 	2. By reading files from HDFS, local FS,etc
+		sc.textFile(<paths>) 
+			- Used to read single/multiple text files and returns single RDD[String]
+		sc.wholeTextFiles(<path>) 
+			- Used to read single/multiple text files and returns single RDD[Tuple[String,String]]
+			- where first value(._1) is file name and second value(._2) is content of the file
+	
 	
 Two types of operations on RDD :
-	1. Transformation (map,flatMap, filter) -- lazy
+	1. Transformation (map,flatMap, reduceByKey, filter, repartition, coalesce) -- lazy
+		a. Narrow transformation - Transformation which do not involve shuffling (map,filter)
+		b. Wide Transformation - Transformation which involve shuffling ( repartition,coalesce,reduceByKey  )
 	2. Action (sum,count,collect,foreach, write)
 
 -----------------Partition-1--------------	
@@ -103,6 +128,36 @@ Two types of operations on RDD :
 8 -map(square)--> 	64 -filter(even)-->	64
 9            		81
 
+========================= Repartition vs Coalesce=====
+
+Repartition: 
+	- Increase or decrease number of partitions
+	- It cause more shuffling
+	- Try to distribute data across new partitions equally
+	
+Coalesce :
+	- Decrease number of partitions
+	- Minimize shuffling
+	- Better performance
+	- It does not guarantee that each partitions have equal data
+-----------------------------
+rd1 = rdd	
+p1 : 1,2,3
+p2 : 4,5,6
+p3 : 7,8,9
+p4 : 5,6,8,10,11
+
+rd1.repartition(2)
+q1 : 1,2,3,7,8,5,11 
+q2 : 4,5,6,9,6,8,10
+-------------------
+rd1.coalesce(2)
+p1 : 1,2,3,7,8,9
+p4 : 5,6,8,10,11,4,5,6
+
+
+
+
 
 ========================== Map vs FlatMap===========
 map --> one to one
@@ -112,14 +167,42 @@ I have completed Scala	--map(x=>x.split(" "))-> Array("I", "have", "completed", 
 --------
 flatMap --> one to many
 RDD[String] -- --flatMap(x=>x.split(" "))-> RDD[String]
+
+=================== rd1=rd0.flatMap(x=>x.split(" ")) --> No shuffling
+----------partition-1 (node-0)
 I 
 was 
 learning 
 Scala
+----------partition-2 (node-1)
 I 
 have 
 completed 
 Scala
+=================== rd2=rd1.map(w=>(w,1)) --> No shuffling
+----------partition-1 (node-0)
+(I,1) 
+(was ,1)
+(learning ,1)
+(Scala,1)
+----------partition-2 (node-1)
+(I ,1)
+(have ,1)
+(completed ,1)
+(Scala,1)
+
+=================== rd3=rd2.reduceByKey(_+_)  --> shuffling
+----------partition-1 (node-0)
+(I,2)
+(was,1)
+(learning ,1)
+----------partition-2 (node-1)
+(Scala,2)
+(have,1)
+(completed,1)
+
+
+Shuffling : Movement of data from one partition( or node) to another partition(or node)
 
 ==================Word Count Example========================
 Input :
@@ -142,3 +225,82 @@ We	4
 :::
 Scala	6
 Spark	4
+
+
+==================
+
+word, o
+sc	1
+ss  1
+sd	3
+ss  2
+sd  1
+
+sc 1
+ss 3
+sd 4
+
+select word, sum(o) from tbl group by word
+
+===============================
+
+Raj, IT, 30000
+Ram, IT, 50000
+San, Bank, 60000
+Tan, Bank, 50000
+
+-----
+Total salary = 1.9L
+
+select sum(salary) as total_sal from emp;
+
+val totalSal = sc.textFile("path")
+				.map(lx=> lx.split(","))
+				.map(ar=> ar(2).toDouble)
+				.reduce(_+_)
+
+----------
+Salary per department:
+IT, 80000
+Bank, 1.1L
+
+select dept,sum(salary) as total_sal from emp group by dept;
+
+val rd1=sc.textFile("path")	---> RDD[String]
+val rd2=rd1.map(lx=> lx.split(","))	---> RDD[Array[String]]
+val rd3 = rd2.map(ar=> (ar(1),ar(2).toDouble))	---> RDD[(String, Double)]
+(IT, 30000   )
+(IT, 50000   )
+(IT, 60000   )
+(Bank, 60000 )
+(Bank, 50000 )
+val deptSal=rd3.reduceByKey(_+_)
+val deptSal=rd3.reduceByKey((a,b)=>a+b))
+
+IT -> 30000,50000,60000 -> 1.4L
+Bank -> 60000, 50000 -> 1.1L
+
+val deptSal = sc.textFile("path")
+				.map(lx=> lx.split(","))
+				.map(ar=> (ar(1),ar(2).toDouble))
+				.reduceByKey((a,b)=>a+b))
+
+------------------------------
+val s = (((4 + 8) + 9) + 2 )
+12 + 9 + 2 
+21+2
+23
+
+===================Spark SQL
+Spark core - RDD
+Spark SQL - Dataframe, Dataset
+
+RDD -> Dataframe -> Dataset
+
+Dataframe :
+	- Distributed collection of data organized into named columns
+	- Conceptually, it is equivalent to a table in RDBS or dataframe in R/Python
+	- How to create DF?
+		- existing RDD
+		- structred files
+		- tables in any database
