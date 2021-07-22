@@ -113,7 +113,7 @@ Two types of operations on RDD :
 	1. Transformation (map,flatMap, reduceByKey, filter, repartition, coalesce) -- lazy
 		a. Narrow transformation - Transformation which do not involve shuffling (map,filter)
 		b. Wide Transformation - Transformation which involve shuffling ( repartition,coalesce,reduceByKey  )
-	2. Action (sum,count,collect,foreach, write)
+	2. Action (reduce,sum,count,collect,foreach, write)
 
 -----------------Partition-1--------------	
 1            		1
@@ -243,14 +243,16 @@ sd 4
 select word, sum(o) from tbl group by word
 
 ===============================
-
+emp.csv
+--------------
 Raj, IT, 30000
 Ram, IT, 50000
-San, Bank, 60000
-Tan, Bank, 50000
+Bern, IT, 80000
+San, Admin, 60000
+Tan, Admin, 50000
 
------
-Total salary = 1.9L
+--1. Find sum of salary of all the employees
+Total salary = 270000
 
 select sum(salary) as total_sal from emp;
 
@@ -259,12 +261,14 @@ val totalSal = sc.textFile("path")
 				.map(ar=> ar(2).toDouble)
 				.reduce(_+_)
 
-----------
-Salary per department:
-IT, 80000
-Bank, 1.1L
+--2. Find total salary for each department
+IT, 160000
+Admin, 110000
+
 
 select dept,sum(salary) as total_sal from emp group by dept;
+
+
 
 val rd1=sc.textFile("path")	---> RDD[String]
 val rd2=rd1.map(lx=> lx.split(","))	---> RDD[Array[String]]
@@ -299,8 +303,52 @@ RDD -> Dataframe -> Dataset
 
 Dataframe :
 	- Distributed collection of data organized into named columns
-	- Conceptually, it is equivalent to a table in RDBS or dataframe in R/Python
+	- Conceptually, it is equivalent to a table in RDBMS or dataframe in R/Python
 	- How to create DF?
 		- existing RDD
+			- using toDF() Function
+			- Using createDataFrame() from SparkSession
+		- Collections like List or Seq
+			- using toDF() Function
+			- Using createDataFrame() from SparkSession
 		- structred files
 		- tables in any database
+		
+	- Operation
+		- add/remove/modify/rename columns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
