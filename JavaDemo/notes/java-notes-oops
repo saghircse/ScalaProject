@@ -1,0 +1,50 @@
+OOPs
+1. Class and Object
+2. Inheritance
+3. Polymorphism - Overloading and Overriding
+4. Abstraction
+5. Encaptulation
+
+Class and Object:
+1. How to create objects?
+2. How to instialize object?
+	- Using reference variable
+	- Using method
+	- Using constructor
+3. Constructor - 
+	1. Default - Non Parameterized Constructor
+	2. Parameterized Constructor
+Rules :
+1. Constructor must have same name as that of its class
+2. No return type
+3. Can not be abstract, static, final, and synchronized
+
+=====================
+Employee:
+	id,name,salary,age
+	display(), getAgeGroup()
+	
+=====================
+Inheritance:
+	- It is mechanism in which one class inherits/acquires all the states and behaviour of parent object.
+	- IS-A relationship
+Example : 
+Developer is a Employee.
+Manager is a Employee.
+
+Why?
+1. Code resubility - Child class can use properties of Parent Class
+2. Method Overriding
+
+Super Class --> Parent Class
+Sub Class --> Child Class
+
+class SuperClassX{
+	// States and Behaviour of SuperClassA
+}
+
+class SubClassX extends SuperClassX{
+	// States and Behaviour of SuperClassA
+	// States and Behaviour of SubClassX
+}
+

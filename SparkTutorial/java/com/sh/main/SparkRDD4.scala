@@ -28,11 +28,11 @@ object SparkRDD4 {
 		
 		val fileRDD = sc.wholeTextFiles(filePath)
 		println("No of partition in fileRDD = "+fileRDD.getNumPartitions)
-		//fileRDD.foreach(println)
+		fileRDD.foreach(println)
 		
-		fileRDD.foreach{ l =>
-       println(l._1 + "====>" + l._2)
-     }
+		//fileRDD.foreach{ l =>
+    //   println(l._1 + "====>" + l._2)
+    // }
 
 
 		

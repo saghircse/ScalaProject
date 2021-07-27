@@ -107,12 +107,36 @@ How to create RDD?
 		sc.wholeTextFiles(<path>) 
 			- Used to read single/multiple text files and returns single RDD[Tuple[String,String]]
 			- where first value(._1) is file name and second value(._2) is content of the file
+f1.txt			
+This is cat
+It is table
+
+f2.txt			
+This is dog
+It is chair
+
+sc.textFile(<paths>) ---> RDD[String]
+sc.wholeTextFiles(<path>) ---> RDD[(String,String)]
+(f1.txt,This is cat
+It is table)
+
+(f2.txt,This is dog
+It is chair)
+
+
+			
+	val t = (35,"raj", 5000.5, true)
+	t._1
+	t._2
 	
+	val a = Array(5,6,7,8)
+	a(0)
+	a(1)
 	
 Two types of operations on RDD :
 	1. Transformation (map,flatMap, reduceByKey, filter, repartition, coalesce) -- lazy
 		a. Narrow transformation - Transformation which do not involve shuffling (map,filter)
-		b. Wide Transformation - Transformation which involve shuffling ( repartition,coalesce,reduceByKey  )
+		b. Wide Transformation - Transformation which involve shuffling ( repartition,coalesce,reduceByKey, distinct, dropDuplicate  )
 	2. Action (reduce,sum,count,collect,foreach, write)
 
 -----------------Partition-1--------------	
@@ -295,6 +319,12 @@ val s = (((4 + 8) + 9) + 2 )
 21+2
 23
 
+------------------
+
+val addr = "Pune,Maharashtra,India"
+val add_arry=addr.split(",")
+
+
 ===================Spark SQL
 Spark core - RDD
 Spark SQL - Dataframe, Dataset
@@ -311,16 +341,61 @@ Dataframe :
 		- Collections like List or Seq
 			- using toDF() Function
 			- Using createDataFrame() from SparkSession
-		- structred files
+		- structred files (csv,json, parquet, avro)
 		- tables in any database
 		
 	- Operation
-		- add/remove/modify/rename columns
+		- add new column or update existing
+		- rename column
+		- remove column
+		- filter. where
+		- concat and split funtion
+		- when otherwise and case when
+		- distinct or dropDuplicate
+		- Group By and Aggregation - sum, count, avg, min, max
+		- Union vs Union ALL
+		- Joins - left, right, full, etc
+		- User defined functions
+		
+val df3 = df1.union(df2)
+		
 
 
 
 
+===================
+g=M
+if(g=='M'){
+	"Male"
+}else if(g=='F'){
+	"Female"
+}else{
+	"Unknon"
+}
 
+--------------------
+if(g=='M'){
+	"Male"
+}else {
+	"Female"
+}
+------------------
+
+SQL(AND, OR)
+Scala/Java (&&, ||)
+
+when-otherwise
+when(col("gender")==="M" ,"Male").when(col("gender")==="F","Female").otherwise("Unknown")
+
+select 
+case when gender='M' then 'Male' when gender='F' then 'Female' else 'Unknown' end
+
+----------------------------
+case when <condition> then "<true>" else "<flase>" end
+
+case when <condition-1>  then "<true-1>"
+	when <condition-2>  then "<true-2>"
+	else <"false-part">
 
 
 

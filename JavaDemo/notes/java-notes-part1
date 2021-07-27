@@ -56,7 +56,7 @@ Types of operators :
 Array - 
 	Collection of elements of similar data type
 	Fixed size
-	stores elements in contiguos memory location
+	stores elements in contagous memory location
 	Indexed based ( starting from 0)
 	
 int x; // declare
