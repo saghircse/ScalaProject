@@ -1,0 +1,5 @@
+name|cost|writer_id
+Scala|400|1
+Spark|500|2
+Java|300|3
+Python|350|5
