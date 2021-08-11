@@ -38,22 +38,40 @@ object SparkDF9 {
 		                
 		empDF.show()
 
-		val windowSpec = Window
-		
+		// Ranking Functions
 		val empWindow1 = Window.orderBy("sal")
 		val empWindow2 =Window.partitionBy("dept").orderBy("sal")
 
-val empDFx =  empDF.withColumn("row_number", row_number.over(empWindow1) )
+    val empDFx =  empDF.withColumn("row_number", row_number.over(empWindow1) )
 .withColumn("rank", rank.over(empWindow1) )
 .withColumn("dense_rank", dense_rank.over(empWindow1) )
 
 empDFx.show()
 
-val empDFy =  empDF.withColumn("row_number", row_number.over(empWindow2) )
+    val empDFy =  empDF.withColumn("row_number", row_number.over(empWindow2) )
 .withColumn("rank", rank.over(empWindow2) )
 .withColumn("dense_rank", dense_rank.over(empWindow2) )
 
-empDFy.show()
+  empDFy.show()
+  
+  // Analytical Function
+  val empDFp =  empDF.withColumn("lag", lag("sal",1).over(empWindow1) )
+                      .withColumn("lead", lead("sal",1).over(empWindow1) )
+
+                      empDFp.show()
+  
+  
+  // Aggregate Functions
+  val empWindow3 =Window.partitionBy("dept")
+  val empDFz =  empDF.withColumn("avg", avg(col("sal")).over(empWindow3) )
+                      .withColumn("min", min(col("sal")).over(empWindow3) )
+                      .withColumn("max", max(col("sal")).over(empWindow3) )
+                      .withColumn("sum", sum(col("sal")).over(empWindow3) )
+                      
+  empDFz.show()
+  
+
+
 
 
 		
